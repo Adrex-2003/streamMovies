@@ -1,0 +1,24 @@
+<div id="head">
+  <div id="nav" [ngClass]="{'scrolled': isScrolled}">
+    <div class="topnav" id="myTopnav">
+      <a href="/home">
+        <img src="https://firebasestorage.googleapis.com/v0/b/images-29f45.appspot.com/o/logos%2Fpng-transparent-cinema-film-moveis-logo-film-art-film-removebg-preview.png?alt=media&token=196f38b0-f9eb-4b57-a63e-7f9d01e45c48" alt="" style="width: 150px; height: 70px; margin-top: 5px; padding-top: 2px;">
+      </a>
+      <a href="/home" class="active"><b>Home</b></a>
+      <a href="/movies"><b>Películas</b></a>
+      <a href="/dashboard" *ngIf="admin() == 'adrex@gmail.com'"><b>Dashboard</b></a>
+      <a style="cursor: pointer;">
+        <b style="display: flex; align-items: center; color: white;">
+          <span *ngIf="log">
+            {{ name}}
+            <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
+          </span>
+          <span *ngIf="!log" (click)="singIn()">Login</span>
+        </b>
+      </a>
+      <a href="javascript:void(0);" class="icon" (click)="toggleMenu()">
+        <i class="fa-solid fa-bars fa-xl" style="padding-top: 40px;"></i>
+      </a>
+    </div>
+  </div>
+</div>

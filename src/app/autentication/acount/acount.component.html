@@ -1,0 +1,43 @@
+<div id="create-acount">
+    <form class="container" [formGroup]="registerForm" (ngSubmit)="register()">
+        <h1><b>Register</b></h1>
+        <div id="name" class="in" >
+            <input type="text" placeholder="Name(s)" formControlName="name" [(ngModel)]="name" #names>
+            <i class="fa-solid fa-user fa-xl"></i>
+        </div>
+        <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="controls">
+            First name is required.
+        </div>
+        <div id="lastName" class="in">
+            <input type="text" placeholder="last name(s)" formControlName="lastName" [(ngModel)]="lastName" #lastNames>
+            <i class="fa-regular fa-user fa-xl"></i>
+        </div>
+        <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="controls">
+            Last name is required.
+        </div>
+        <div id="email" class="in">
+            <input type="email" placeholder="Email" formControlName="email" [(ngModel)]="email" #emails>
+            <i class="fa-solid fa-envelope fa-xl"></i>
+        </div>
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="controls">
+            Valid email is required.
+        </div>
+        <div id="password" class="in">
+            <input type="password" placeholder="Password" formControlName="password">
+            <i class="fa-solid fa-lock fa-xl"></i>
+        </div>
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="controls">
+            Password must be at least 6 characters long.
+        </div>
+        <div id="confirm-password" class="in">
+            <input type="password" placeholder="Confirm password" formControlName="confirmPassword">
+            <i class="fa-solid fa-lock fa-xl"></i>
+        </div>
+        <div *ngIf="registerForm.hasError('notSame') && registerForm.get('confirmPassword')?.touched" class="controls">
+            Passwords do not match.
+        </div>
+        <div id="button">
+            <button type="submit" [disabled]="registerForm.invalid">Register</button>
+        </div>
+    </form>
+</div>

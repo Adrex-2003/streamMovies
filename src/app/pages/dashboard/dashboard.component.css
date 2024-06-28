@@ -1,0 +1,49 @@
+
+#content{
+    display: flex;
+    width: 100%;
+}
+#m{
+    width: 20%;
+    background: rgba(0, 0, 0, 0);
+    margin: 1%;
+    box-shadow: 0 0 3px rgb(129, 127, 127);
+}
+
+app-main-dashboard{
+    margin: 1%;
+    position: relative;
+    width: 78%;
+    right: 0;
+}
+#men{
+    width:0%; 
+    height: 100vh; 
+    position: fixed; 
+    z-index: 1; 
+    place-items: center;
+    display: none;
+}
+#men i:hover{
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: aquamarine;
+    padding: 7px;
+    border-radius: 50px;
+}
+
+@media(max-width: 1000px){
+    #men{
+        display: grid;
+        z-index: 2;
+    }
+    app-main-dashboard{
+        width: 100%;
+        margin: 0;
+    }
+    #m{
+        display: none;
+        width: 70%;
+        z-index: 1;
+    }
+}

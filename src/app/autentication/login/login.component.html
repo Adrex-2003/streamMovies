@@ -1,0 +1,39 @@
+<div id="login">
+    <div id="reset" #closeReset>
+        <span style="right: 0;"><i class="fa-solid fa-xmark fa-xl" (click)="closeResetW()"></i></span>
+        <app-reset-password style="margin-top: 5%;"></app-reset-password>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="container">
+        <span><i class="fa-solid fa-xmark fa-xl" (click)="home()"></i></span>
+        <div style="margin-top: 3%;">
+            <h1>Welcome</h1>
+            <img src="https://firebasestorage.googleapis.com/v0/b/images-29f45.appspot.com/o/logos%2Fpng-transparent-cinema-film-moveis-logo-film-art-film-removebg-preview.png?alt=media&token=196f38b0-f9eb-4b57-a63e-7f9d01e45c48" alt="" style="width: 150px; height: 70px;">
+        </div>
+        <div id="email">
+            <input type="email" placeholder="Email" formControlName="email">
+            <i class="fa-solid fa-envelope fa-lg"></i>
+        </div>
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="controls">
+            Valid email is required.
+        </div>
+        <div id="password">
+            <input type="password" placeholder="Password" formControlName="password">
+            <i class="fa-solid fa-lock fa-lg"></i>
+        </div>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="controls">
+            Password is required.
+        </div>
+        <div id="google" (click)="loginWithGoogle()">
+            <b>continuar con google</b>
+        </div>
+        <div id="recoverPassword">
+            <p (click)="openReset()">Olvidé mi contraseña</p>
+        </div>
+        <div id="button">
+            <button type="submit" [disabled]="loginForm.invalid">login</button>
+        </div>
+        <div id="newUser">
+            <a href="/createAcount"><p>No tengo cuenta. <b>Crear ahora</b></p></a>
+        </div>
+    </form>
+</div>

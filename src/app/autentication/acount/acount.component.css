@@ -1,0 +1,96 @@
+#create-acount{
+    display: grid;
+    place-content: center;
+    color: black;
+    background-color: rgb(1, 10, 22);
+    height: 100vh;
+}
+.container{
+    background: white;
+    width: 500px;
+    display: grid;
+    place-items: center;
+    border: 1px solid white;
+    box-shadow: 0 0 5px black;
+    border-radius: 20px;
+    padding: 5% 0 5% 0;
+}
+.controls{
+    height: 0;
+    width: 70%;
+    color: red;
+}
+h1{
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.in{
+    border-bottom: 2px solid rgb(31, 30, 30);
+    width: 70%;
+    margin-top: 10%;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 35px;
+    border-radius: 5px;
+}
+#name{
+    margin-top: 7.5%;
+}
+input{
+    width: 93%;
+    background: rgba(1, 15, 36, 0);
+    border: none;
+    color: rgb(85, 85, 85);
+    font-size: 1em;
+    padding: 1%;
+}
+input::placeholder{
+    color: gray;
+}
+input:focus {
+    outline: none; /* Asegúrate de que no haya contorno */
+    border: none; /* Asegúrate de que no haya borde */
+    box-shadow: none; /* Asegúrate de que no haya sombra */
+}
+
+#button{
+    margin-top: 10%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.in:hover{
+    border: 2px solid rgb(31, 30, 30);
+    border-radius: 10px;
+    transition: 0.2s;
+    background: rgba(255, 255, 255, 0.2);
+}
+#button button{
+    height: 40px;
+    width: 70%;
+    border-radius: 30px;
+    font-size: 1em;
+}
+#button button:hover{
+    border: none;
+    box-shadow: 0 0 10px white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+i{
+    color: rgb(1, 1, 70);
+}
+@media (max-width: 700px){
+    .container{
+        width: 90%;
+    
+    }
+    #create-acount{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+}

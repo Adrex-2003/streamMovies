@@ -1,0 +1,44 @@
+<div style="width: 100%; display: grid; place-items: center; background: #00171f; min-height: 100vh; border-radius: 5px; overflow-x: auto;" id="prin">
+  <div style="width: 95%; background-color: white; min-height: 95vh; position: relative; border-radius: 10px; padding: 15px;" id="con">
+    <h1><b>Users</b></h1>
+    <div id="top">
+      <div id="search">
+        <input [(ngModel)]="search" type="text" placeholder="Buscar Usuario">
+        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #033154;"></i>
+      </div>
+    </div>
+    <div id="list">
+      <table>
+        <thead>
+          <tr>
+            <td class="title"><b>PROFILE</b></td>
+            <td class="description"><b>EMAIL</b></td>
+            <td class="category"><b>LAST NAME</b></td>
+            <td class="video"><b>NAME</b></td>
+            <td class="actions"><b>ACTIONS</b></td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let user of users | keyvalue">
+            <tr *ngIf="searchMovies(user.value.name)">
+              <td class="title">
+                <b [ngStyle]="{'background-color': user.value.backgroundColor}" style="border-radius: 50%; font-size: 2em; padding: 15px;">
+                  {{user.value.name[0]}}
+                </b>
+              </td>
+              <td class="description"><p>{{user.value.email}}</p></td>
+              <td class="category"><p>{{user.value.lastName}}</p></td>
+              <td class="video"><p>{{user.value.name}}</p></td>
+              <td class="actions">
+                <button (click)="deleteUser(user.value.email)" style="color: rgb(240, 35, 35);">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                <span>eliminar</span>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

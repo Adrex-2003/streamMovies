@@ -1,0 +1,135 @@
+
+#dashboard{
+    background-color: rgb(4, 19, 39);
+    color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-top: 3%;
+}
+#content{
+    margin-top: 3%;
+    display: flex;
+    width: 90%;
+    background: linear-gradient(to bottom, rgb(3, 42, 94), rgb(3, 30, 66), rgb(1, 10, 22));
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 2%;
+}
+#table{
+    display: grid;
+    place-items: center;
+}
+p{
+    padding: 5px 20px 10px 20px;
+    text-align: justify;
+
+}
+.poster{
+    width: 20%;
+    display: grid;
+    place-content: center;
+}
+.poster img{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+.poster:hover{
+    cursor: pointer;
+}
+.info{
+    display: grid;
+    width: 80%;
+
+}
+.buttons{
+    display: grid;
+    place-items: center;
+    width: 15%;
+    padding: 0;
+    padding-right: 5% ;
+}
+.buttons button{
+  color: black;
+  border: 2px solid white;
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+}
+.edit{
+    background: #04AA6D;
+}
+.delete{
+    background: red;
+}
+
+#headMovies{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#addMovie{
+    width: 15%;
+    border-radius: 10px;
+    background-color: aqua;
+    font-size: 1em;
+    border: 2px solid rgb(4, 38, 83);
+}
+#search{
+    background: white;
+    padding: 5px;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+#search input{
+    border: none;
+    width: 95%;
+    height: 40px;
+    font-size: 1em;
+}
+#search input:focus{
+    border: none;
+    outline: none;
+    
+}
+#search i:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px rgb(1, 10, 22);
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px white;
+}
+
+@media(max-width: 1000px) {
+    #dashboard{
+        border-radius: 0;
+    }
+    #content{
+        width: 90%;
+        display: grid;
+        justify-content: center;
+        padding: 5% 0 5% 0;
+        box-sizing: border-box;
+    }
+    .poster{
+        width: 100%;
+        padding-left: 0;
+    }
+    .info{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .buttons{
+        display: flex;
+        place-content: center;
+        width: 100%;
+    }
+.poster img{
+    width: 250px; border-radius: 10px; height: 350px;
+}
+}

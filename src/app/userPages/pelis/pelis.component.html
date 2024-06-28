@@ -1,0 +1,32 @@
+
+<div class="main">
+    <div style="display: grid; place-items: center;">
+        <div id="search">
+            <input [(ngModel)]="search" (ngModelChange)="onSearch()" type="text" placeholder="Buscar Película">
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #033154;"></i>
+        </div>
+    </div>
+    
+    <div id="" class="sections">
+        <br>
+        <h2>{{search == '' ?'Últimas películas': ''}}</h2>
+        <br>
+        <div id="extrenos" class="movie-list">
+            <ng-container *ngFor="let movie of movies | keyvalue">
+                <div class="content">
+                    <div class="container" (click)="reproductor(movie.value.title, movie.value.description, movie.value.category, movie.value.poster, movie.value.video)">
+                        <img [src]="movie.value.poster" alt="Avatar" class="image">
+                        <div class="overlay">{{movie.value.title}}</div>
+                    </div>
+                </div>
+            </ng-container>
+            
+        </div>
+    </div>   
+    <div class="pagination">
+        <button (click)="onPageChange(p - 1)" [disabled]="p === 1">Anterior</button>
+        <span>Página {{ p }} de {{ getTotalPages() }}</span>
+        <button (click)="onPageChange(p + 1)" [disabled]="p >= getTotalPages()">Siguiente</button>
+    </div>
+    <br>
+</div>

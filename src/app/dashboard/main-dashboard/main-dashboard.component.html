@@ -1,0 +1,24 @@
+
+<div id="dashboard">
+
+    <h1 style="text-align: center;">MOVIES</h1>
+    <div id="headMovies">
+        <div id="search">
+            <input type="text" placeholder="Buscar Película">
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #033154;"></i>
+        </div>
+    </div>
+    <div id="table">
+        <div *ngFor="let movie of movies | keyvalue" id="content">
+            <div class="poster">
+                <img [src]="movie.value.poster" alt="">
+            </div>
+            <div class="info">
+                <p><b>title: </b>{{movie.value.title}}</p>
+                <p><b>Category: </b>{{movie.value.category}}</p>
+                <p><b>Description: </b>{{movie.value.description}}</p>
+                <p><b>Video: </b>{{movie.value.video}}</p>
+            </div>
+        </div>
+    </div>
+</div>

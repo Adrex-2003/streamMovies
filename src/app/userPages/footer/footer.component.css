@@ -1,0 +1,35 @@
+#footer{
+    border-top: 1px solid white;
+    background-color: rgb(1, 15, 36);
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+.logo{
+    width: 30%;
+    text-align: center;
+}
+.derechos{
+    color: white;
+    text-align: center;
+    width: 40%;
+}
+.contact{
+    width: 30%;
+}
+.contact a{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+@media(max-width: 700px){
+    #footer{
+        display: grid;
+        place-items: center;
+    }
+    #footer div{
+        width: 100%;
+        text-align: center;
+    }
+}

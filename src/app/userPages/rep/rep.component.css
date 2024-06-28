@@ -1,0 +1,112 @@
+#container{
+    background: rgb(1, 10, 22);
+    width: 100%;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+}
+#content {
+    display: grid;
+    place-items: center;
+    position: relative;
+    background-image: url('https://img.pikbest.com/wp/202345/popcorn-movies-the-movie-theatre-with-and-a-striped-cup_9586557.jpg!w700wp');
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0; /* Asegura que el contenido esté por encima del pseudo-elemento */
+    border-radius: 5px;
+    overflow: hidden; /* Oculta cualquier desbordamiento del pseudo-elemento */
+  }
+  
+  #content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(to top, rgba(1, 10, 22, 0.3), rgba(1, 10, 22, 0)),
+      linear-gradient(to bottom, rgba(1, 10, 22, 0.3), rgba(1, 10, 22, 0)),
+      linear-gradient(to left, rgba(1, 10, 22, 0.5), rgba(1, 10, 22, 0)),
+      linear-gradient(to right, rgba(1, 10, 22, 0.5), rgba(1, 10, 22, 0));
+    z-index: -2; /* Coloca el pseudo-elemento detrás del contenido */
+    pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
+  }
+
+#info{
+    display: flex;
+    width: 60%;
+    background: rgba(1, 10, 22, 0.5);
+    border-radius: 5px;
+    height: auto;
+    padding: 2.5%;
+    color: white;
+    text-align: justify;
+}
+#info img{
+    height: 300px;
+    border-radius: 5px;
+}
+
+#poster{
+    width: 30%;
+}
+
+#description{
+    position: relative;
+    display: grid;
+    width: 70%;
+    padding-top: 2.5%;
+}
+#video{
+    background-color: rgb(1, 10, 22);
+    width: 100%;
+    box-shadow: 0 0px 10px rgb(1, 10, 22),
+        0px -5px 20px rgb(1, 10, 22), 
+        0px -10px 40px rgb(1, 10, 22), 
+        0px 0px 60px rgb(1, 10, 22), 
+        0px 0 100px rgb(1, 10, 22),
+        0px 0px 100px rgb(1, 10, 22),
+        0px 0px 150px rgb(1, 10, 22), 
+        0px 0 150px rgb(1, 10, 22);
+    position: relative;
+    padding-top: 5%;
+    display: grid;
+    place-items: center;
+}
+#video iframe{
+    width: 60%;
+}
+
+#sinopsis{
+    width: 60%;
+    color: white;
+    font-size: 1em;
+    text-align: justify;
+}
+h3{
+    border-left: 2px solid aqua; color: white; padding-left: 12.5px;
+    text-align: left;
+}
+@media(max-width:700px){
+    #info{
+        display: grid;
+        place-items: center;
+        width: 85%;
+        height: auto;
+        padding: 2.5%;
+        margin: 2.5%;
+    }
+    #poster{
+        width: 100%;
+        text-align: center;
+    }
+
+    #desciption{
+        width: 100%;
+    }
+    #video iframe, #sinopsis{
+        width: 85%;
+    }
+}

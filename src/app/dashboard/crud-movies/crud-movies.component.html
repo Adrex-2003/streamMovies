@@ -1,0 +1,46 @@
+<div style="width: 100%; display: grid; place-items: center; background: #00171f; min-height: 100vh; border-radius: 5px; overflow-x: auto;" id="prin">
+    <div style="width: 95%; background-color: white; min-height: 95vh; position: relative; border-radius: 10px; padding: 15px;" id="con">
+      <h1><b>Movies data base</b></h1>
+      <div id="top">
+        <button id="addMovie" (click)="addMovie()"><b>Add movie</b></button>
+        <div id="search">
+          <input [(ngModel)]="search" type="text" placeholder="Buscar Película">
+          <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #033154;"></i>
+        </div>
+      </div>
+      <div id="list">
+        <table>
+          <thead>
+            <tr>
+              <td class="poster"></td>
+              <td class="title" style="justify-content: left;"><b>TITLE</b></td>
+              <td class="description"><b>DESCRIPTION</b></td>
+              <td class="category"><b>CATEGORY</b></td>
+              <td class="video"><b>LINK VIDEO</b></td>
+              <td class="actions"><b>ACTIONS</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let movie of movies | keyvalue">
+              <tr *ngIf="searchMovies(movie.value.title)">
+                <td class="poster">
+                    <img [defaultImage]="movie.value.poster" [lazyLoad]="movie.value.poster" alt="">
+                </td>
+                <td class="title"><b>{{movie.value.title}}</b></td>
+                <td class="description"><p>{{movie.value.description}}</p></td>
+                <td class="category"><p>{{movie.value.category}}</p></td>
+                <td class="video"><p>{{movie.value.video}}</p></td>
+                <td class="actions">
+                  <button (click)="sendId(movie.key)" style="color: rgb(40, 197, 40);"><i class="fa-solid fa-pencil"></i></button>
+                  <span>editar</span>
+                  <button (click)="deleteMovie(movie.key)" style="color: rgb(240, 35, 35);"><i class="fa-solid fa-trash"></i></button>
+                  <span>eliminar</span>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

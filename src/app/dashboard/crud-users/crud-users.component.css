@@ -1,0 +1,163 @@
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+h1{
+    text-align: center;
+}
+#list{
+    overflow: auto;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+table{
+    width: 100%;
+    font-size: 12px;
+}
+#top{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0%;
+}
+#addMovie{
+    height: 40px;
+    width: 20%;
+    border-radius: 10px;
+    background-color:aqua;
+    cursor: pointer;
+}
+
+
+#search{
+    float: right;
+    background-color: white;
+    border-radius: 5px;
+    width: 40%;
+    height: 35px;
+    display: flex;
+    place-items: center;
+    padding: 5px;
+    border: 1px solid black;
+
+}
+#search:hover{
+    border: 1px solid rgba(100, 96, 96, 0.5);
+}
+#search input{
+    width: 90%;
+    height: 95%;
+    border: none;
+}
+#search input:focus{
+    outline: none;
+}
+p{
+    display: inline;
+    position: relative;
+    margin: 2%;
+    padding: 5px;
+    margin-left: 0;
+    padding-left: 0;
+    color: gray;
+
+}
+thead tr{
+    height: 30px;
+}
+thead td{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+table{
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+thead tr{
+    border-radius: 5px;  
+}
+td{
+    border-spacing:0;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+}
+
+tr{
+    height: 60px;
+    display: flex;
+    padding: 10px;
+    border-bottom: 1.5px solid rgba(100, 96, 96, 0.5);
+    
+    
+}
+.title{
+    width: 10%;
+}
+.description{
+    width: 30%;
+}
+.category{
+    width: 25%;
+    
+}
+.video{
+    width: 25%;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.actions{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+.actions button{
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+.actions span{
+    display: none;
+}
+.actions button:hover{
+    cursor: pointer;
+    .actions span{
+        display: block;
+        position: fixed;
+        z-index: 2;
+    }
+}
+@media(max-width: 1000px){
+    #list{
+        display: grid;
+    }
+    td{
+        width: auto;
+        height: auto;
+    }
+    .actions{
+        width: 15%;
+    }
+    .poster{
+        width: 12.5%;
+    }
+    .description{
+        width: 30%;
+    }
+    #con{
+        overflow-x: auto;
+        margin: 2.5%;
+        width: 90%;
+    }
+    #prin{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
