@@ -41,7 +41,45 @@
   .topnav a:hover {
     color: aqua;
   }
-  
+  #perfil:hover{
+    p{
+      display: block;
+      color: white;
+    }
+    color: aqua;
+  }
+  #perfil p{
+    display: none;
+    position: absolute;
+    background-color: rgba(1, 15, 36, 0.5);
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    width: 100px;
+  }
+  #perfil{
+    margin-right: 20px;
+    max-width: 150px;
+    overflow: hidden;
+  }
+  #salir:hover{
+    p{
+      display: block;
+      color: white;
+    }
+    color: red;
+  }
+  #salir p{
+    display: none;
+    position: absolute;
+    background-color: rgba(180, 3, 26, 0.5);
+    padding: 5px;
+    font-size: 10px;
+    border-radius: 10px;
+    border: 1px solid red;
+    width: 100px;
+  }
   .topnav a.active {
     color: aqua;
   }

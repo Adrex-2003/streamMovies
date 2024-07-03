@@ -1,0 +1,45 @@
+<div id="main">
+    <div id="container">
+        <div id="portada">
+            <img src="https://png.pngtree.com/background/20230616/original/pngtree-modern-profile-web-banner-background-in-3d-render-picture-image_3652219.jpg" alt="">
+        </div>
+        <div id="perfil">
+            <img src="https://static.vecteezy.com/system/resources/previews/002/158/565/non_2x/avatar-profile-pink-neon-icon-brick-wall-background-pink-neon-icon-vector.jpg" alt="">
+            <h2><b>Mi Perfil</b></h2>
+        </div>
+        <div id="info">
+            <b>Nombre: </b>
+            <ng-container *ngIf="!update">
+                <p>{{user.name}}</p>
+            </ng-container>
+            <ng-container *ngIf="update">
+                <br><input #name type="text" [value]="user.name"><br>
+            </ng-container>
+            <br>
+            <b>Apellido: </b>
+            <ng-container *ngIf="!update">
+                <p>{{user.lastName}}</p>
+            </ng-container>
+            <ng-container *ngIf="update">
+                <br><input #lastName type="text" [value]="user.lastName"><br>
+            </ng-container>
+            <br>
+            <b>Email: </b>
+            <p>{{user.email}}</p>
+            <br>
+            <b>Rol:</b>
+            <p>{{user.rol}}</p>
+            <br>
+        </div>
+        <div id="actions">
+            <ng-container *ngIf="!update">    
+                <button class="act" style="margin-right: 50px; background-color: rgba(128, 128, 128, 0.575); border: 1px solid rgb(82, 81, 81);" (click)="volver()">Volver</button>
+                <button class="act" style="background-color: rgba(0, 255, 255, 0.61); border: 1px solid aqua;" (click)="editar()">Editar</button>
+            </ng-container>
+            <ng-container *ngIf="update">    
+                <button class="act" style="margin-right: 50px; background-color: rgba(207, 6, 6, 0.575); border: 1px solid red;" (click)="cancelar()">Cancelar</button>
+                <button class="act" style="background-color: rgba(2, 134, 2, 0.589); border: 1px solid green;" (click)="updateData()">Actualizar</button>
+            </ng-container>
+        </div>
+    </div>
+</div>

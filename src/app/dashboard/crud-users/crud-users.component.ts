@@ -18,6 +18,7 @@ export class CrudUsersComponent {
   users2: any[] = [];
   dataService: any;
   search: string = '';
+  admin: boolean = false;
 
   constructor(private router: Router){
     this.getUsers();
@@ -37,20 +38,35 @@ export class CrudUsersComponent {
       backgroundColor: this.getRandomColor()
     }));
   }
-  async deleteUser(email: any){
-    const res = await fetch(`${this.url}users.json`);
-    const data = await res.json();
-    for(let key in data){
-      if(data[key].email == email){
-        await fetch(`${this.url}users/${key}.json`,{
-          method: "DELETE"
-        });
-        alert('Eliminación exitosa');
-        this.getUsers();
-        break;
+  async updateData(email: string, rol: string){
+    if(email.toLocaleLowerCase() != "Adrex@gmail.com".toLocaleLowerCase()){
+      const r = await fetch(`${this.url}users.json`);
+      const us = await r.json();
+      for (let key in us) {
+        if (us[key].email.toLowerCase() === email.toLowerCase()){
+          const role = {
+            name: us[key].name,
+            lastName: us[key].lastName,
+            email: us[key].email,
+            rol: rol
+          }
+          const res = await fetch(`${this.url}users/${key}.json`,{
+            method: "PUT",
+            body: JSON.stringify(role),
+            headers:{
+              'Content-type':'aplication/json; charset=UTF-8'
+            }
+          });
+          alert("Operación exitosa")
+          break;
+        }
       }
+      this.getUsers()
+    }else{
+      alert("Administrador predeterminado");
     }
   }
+
   
   searchMovies(name: string): boolean {
     return name.toLowerCase().includes(this.search.toLowerCase());

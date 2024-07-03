@@ -6,14 +6,20 @@
       </a>
       <a href="/home" class="active"><b>Home</b></a>
       <a href="/movies"><b>Películas</b></a>
-      <a href="/dashboard" *ngIf="admin() == 'adrex@gmail.com'"><b>Dashboard</b></a>
+      <a href="/dashboard" *ngIf="rol == 'Administrador'"><b>Dashboard</b></a>
       <a style="cursor: pointer;">
-        <b style="display: flex; align-items: center; color: white;">
-          <span *ngIf="log">
-            {{ name}}
-            <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
-          </span>
-          <span *ngIf="!log" (click)="singIn()">Login</span>
+        <b style="display:flex; align-items: center; color: white; overflow: hidden;">
+          <ng-container *ngIf="log">
+            <span  id="perfil" (click)="profile()">
+              {{name}}
+              <p>Perfil</p>
+            </span>
+            <span id="salir">
+              <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
+              <p>Cerrar Sesión</p>
+            </span>
+          </ng-container>
+          <span *ngIf="!log" (click)="singIn()" style="span:hover{color: aqua;}">Login</span>
         </b>
       </a>
       <a href="javascript:void(0);" class="icon" (click)="toggleMenu()">

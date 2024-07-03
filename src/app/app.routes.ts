@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './autentication/resed-password/reset-pas
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
 import { ReproductorComponent } from './pages/reproductor/reproductor.component';
 import { DashboardUsersComponent } from './pages/dashboard-users/dashboard-users.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 export const routes: Routes = [
@@ -22,5 +23,6 @@ export const routes: Routes = [
     { path: 'password-reset', component: ResetPasswordComponent},
     { path: 'movies', component: PeliculasComponent},
     { path: 'reproductor', component: ReproductorComponent},
-    { path: 'users', component: DashboardUsersComponent}
+    { path: 'users', component: DashboardUsersComponent},
+    { path: 'perfil', component: PerfilComponent}
 ];

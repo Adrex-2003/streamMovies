@@ -102,13 +102,16 @@ tr{
     width: 30%;
 }
 .category{
-    width: 25%;
+    width: 20%;
     
 }
 .video{
-    width: 25%;
+    width: 20%;
     margin-right: 10px;
     overflow: hidden;
+}
+.rol{
+    width: 10%;
 }
 .actions{
     width: 10%;
@@ -121,18 +124,31 @@ tr{
     margin: 5px;
     background-color: white;
     border: 0.5px solid rgba(0, 0, 0, 0.5);
+    display: grid;
 }
 .actions span{
     display: none;
 }
 .actions button:hover{
     cursor: pointer;
-    .actions span{
-        display: block;
-        position: fixed;
-        z-index: 2;
+    #buttonsA{
+        color: white;
+        background-color: rgba(5, 19, 221, 0.5);
+        border-radius: 10px;
+        border: 1px solid rgba(2, 7, 82, 0.8);
+    }
+    #buttonsE{
+        color: white;
+        background-color: rgba(243, 22, 33, 0.5);
+        border-radius: 10px;
+        border: 1px solid rgba(146, 1, 1, 0.8);
     }
 }
+#buttonsA, #buttonsE{
+    color: rgba(0, 0, 0, 0); 
+    position: absolute;
+}
+
 @media(max-width: 1000px){
     #list{
         display: grid;

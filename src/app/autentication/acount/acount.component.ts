@@ -64,7 +64,8 @@ export class AcountComponent {
     const user = {
       name : this.names.nativeElement.value,
       lastName: this.lastNames.nativeElement.value,
-      email: this.emails.nativeElement.value
+      email: this.emails.nativeElement.value,
+      rol: "user"
     }
     console.log(user);
     

@@ -123,5 +123,13 @@ export class FormComponent {
   }
   redirect(){
     this.router.navigate(['/movies-crud']);
+    this.idService.changeId(null);
+  }
+  vaciar(){
+    this.title = '';
+    this.category = '';
+    this.description = '';
+    this.poster = '';
+    this.video = '';
   }
 }

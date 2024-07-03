@@ -15,6 +15,7 @@
             <td class="description"><b>EMAIL</b></td>
             <td class="category"><b>LAST NAME</b></td>
             <td class="video"><b>NAME</b></td>
+            <td class="rol"><b>ROL</b></td>
             <td class="actions"><b>ACTIONS</b></td>
           </tr>
         </thead>
@@ -23,17 +24,26 @@
             <tr *ngIf="searchMovies(user.value.name)">
               <td class="title">
                 <b [ngStyle]="{'background-color': user.value.backgroundColor}" style="border-radius: 50%; font-size: 2em; padding: 15px;">
-                  {{user.value.name[0]}}
+                  {{user.value.email[0].toUpperCase()}}
                 </b>
               </td>
               <td class="description"><p>{{user.value.email}}</p></td>
               <td class="category"><p>{{user.value.lastName}}</p></td>
               <td class="video"><p>{{user.value.name}}</p></td>
+              <td class="rol">{{user.value.rol}}</td>
               <td class="actions">
-                <button (click)="deleteUser(user.value.email)" style="color: rgb(240, 35, 35);">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-                <span>eliminar</span>
+                <ng-container *ngIf="user.value.rol == 'Administrador'">
+                  <button style="color: rgb(240, 35, 35);" (click)="updateData(user.value.email, 'Usuario')">
+                    <i class="fa-solid fa-trash"></i>
+                    <p id="buttonsE">Eliminar administrador</p>
+                  </button>
+                </ng-container>
+                <ng-container *ngIf="user.value.rol == 'Usuario'">
+                  <button style="color: rgb(35, 100, 240);" (click)="updateData(user.value.email, 'Administrador')">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <p id="buttonsA">Asignar administrador</p>
+                  </button>
+                </ng-container>
               </td>
             </tr>
           </ng-container>
